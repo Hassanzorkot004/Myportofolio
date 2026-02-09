@@ -2089,13 +2089,6 @@
 //   );
 // }
 
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
@@ -2358,9 +2351,11 @@ function App() {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="modal-overlay" onClick={() => setSelectedProject(null)}>
+        <div className="modal-overlay" onClick={() => { setSelectedProject(null); setCurrentMediaIndex(0); }}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedProject(null)}>×</button>
+            <button className="modal-close" onClick={() => { setSelectedProject(null); setCurrentMediaIndex(0); }}>
+              ×
+            </button>
             
             <div className="modal-header">
               <h2>{selectedProject.title}</h2>
@@ -2424,6 +2419,13 @@ function App() {
                   </a>
                 )}
               </div>
+
+              {/* Bouton de retour pour mobile */}
+              <div className="modal-footer">
+                <button className="btn btn-back" onClick={() => { setSelectedProject(null); setCurrentMediaIndex(0); }}>
+                  ← Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2433,3 +2435,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
