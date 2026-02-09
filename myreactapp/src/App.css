@@ -545,97 +545,118 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: var(--dark-bg);
   z-index: 2000;
-  padding: 0;
   overflow-y: auto;
 }
 
 .modal-content {
-  background: var(--card-bg);
-  border-radius: 0;
+  background: var(--dark-bg);
   width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  overflow-y: auto;
+  min-height: 100vh;
   position: relative;
-  border: none;
-  margin: 0;
 }
 
-.modal-close {
+/* Barre de navigation fixe en haut */
+.modal-nav-bar {
   position: fixed;
-  top: 15px;
-  right: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--card-bg);
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  z-index: 2001;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal-back-btn:active {
+  background: var(--primary-color);
+  transform: scale(0.95);
+}
+
+.back-arrow {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.back-text {
+  font-size: 1rem;
+}
+
+.modal-close-x {
   background: rgba(239, 68, 68, 0.9);
   border: none;
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 2001;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 300;
-  line-height: 1;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.modal-close:hover {
+.modal-close-x:active {
   background: rgba(220, 38, 38, 1);
-  transform: scale(1.1);
-}
-
-.modal-close:active {
   transform: scale(0.95);
 }
 
 .modal-header {
-  padding: 70px 20px 20px;
+  padding: 80px 20px 20px;
   border-bottom: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: sticky;
-  top: 0;
   background: var(--card-bg);
-  z-index: 10;
 }
 
 .modal-header h2 {
   font-size: 1.5rem;
   color: var(--text-primary);
-  margin: 0;
-  padding-right: 50px;
+  margin: 0 0 10px 0;
 }
 
 .category-badge {
   display: inline-block;
-  padding: 5px 15px;
+  padding: 6px 16px;
   background: var(--gradient);
   border-radius: 20px;
   font-size: 0.85rem;
   color: white;
-  align-self: flex-start;
 }
 
 .modal-body {
   padding: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .modal-media {
   margin-bottom: 25px;
   border-radius: 8px;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .modal-media img,
@@ -644,64 +665,63 @@ section {
   height: auto;
   max-height: 400px;
   object-fit: contain;
-  background: rgba(0, 0, 0, 0.5);
+  display: block;
 }
 
 .media-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   padding: 15px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.95);
 }
 
 .media-nav-btn {
   background: var(--primary-color);
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  touch-action: manipulation;
-}
-
-.media-nav-btn:hover {
-  background: var(--secondary-color);
-  transform: scale(1.1);
+  font-weight: bold;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .media-nav-btn:active {
-  transform: scale(0.95);
+  background: var(--secondary-color);
+  transform: scale(0.9);
 }
 
 .media-nav span {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .modal-description,
 .modal-tech {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .modal-description h3,
 .modal-tech h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 12px;
   color: var(--text-primary);
+  font-weight: 700;
 }
 
 .modal-description p {
   color: var(--text-secondary);
   line-height: 1.8;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .tech-tags {
@@ -713,33 +733,15 @@ section {
 .modal-links {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  flex-direction: column;
+  margin-top: 30px;
 }
 
 .modal-links .btn {
-  flex: 1;
-  min-width: 140px;
-}
-
-.modal-footer {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border-color);
-}
-
-.btn-back {
   width: 100%;
-  background: var(--card-bg);
-  border: 2px solid var(--border-color);
-  color: var(--text-primary);
-  font-size: 1.1rem;
-  padding: 15px;
-}
-
-.btn-back:hover {
-  background: var(--border-color);
-  border-color: var(--primary-color);
+  text-align: center;
+  padding: 14px;
+  font-size: 1rem;
 }
 
 /* ========================================
@@ -815,35 +817,45 @@ section {
     width: auto;
   }
 
-  /* Modal */
+  /* Modal - Tablette et Desktop */
   .modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
   }
 
   .modal-content {
     border-radius: 12px;
     max-width: 900px;
     max-height: 90vh;
-    height: auto;
+    min-height: auto;
+    overflow-y: auto;
     border: 1px solid var(--border-color);
+    background: var(--card-bg);
   }
 
-  .modal-close {
+  .modal-nav-bar {
     position: sticky;
-    top: 10px;
-    right: 10px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .modal-back-btn:hover {
+    background: rgba(99, 102, 241, 0.2);
+  }
+
+  .modal-close-x:hover {
+    background: rgba(220, 38, 38, 1);
+    transform: scale(1.1);
   }
 
   .modal-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     padding: 30px 30px 20px;
-    position: static;
   }
 
   .modal-header h2 {
-    padding-right: 0;
+    font-size: 1.8rem;
   }
 
   .modal-body {
@@ -851,15 +863,18 @@ section {
   }
 
   .modal-links {
+    flex-direction: row;
     gap: 15px;
   }
 
   .modal-links .btn {
-    flex: initial;
+    flex: 1;
+    width: auto;
   }
 
-  .modal-footer {
-    display: none; /* Cache le bouton "Close" sur desktop */
+  .media-nav-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
   }
 }
 

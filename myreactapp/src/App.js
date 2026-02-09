@@ -2351,11 +2351,32 @@ function App() {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="modal-overlay" onClick={() => { setSelectedProject(null); setCurrentMediaIndex(0); }}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => { setSelectedProject(null); setCurrentMediaIndex(0); }}>
-              ×
-            </button>
+        <div className="modal-overlay">
+          <div className="modal-content">
+            {/* Barre de navigation fixe en haut */}
+            <div className="modal-nav-bar">
+              <button 
+                className="modal-back-btn" 
+                onClick={() => { 
+                  setSelectedProject(null); 
+                  setCurrentMediaIndex(0);
+                  document.body.style.overflow = 'unset';
+                }}
+              >
+                <span className="back-arrow">←</span>
+                <span className="back-text">Back</span>
+              </button>
+              <button 
+                className="modal-close-x" 
+                onClick={() => { 
+                  setSelectedProject(null); 
+                  setCurrentMediaIndex(0);
+                  document.body.style.overflow = 'unset';
+                }}
+              >
+                ✕
+              </button>
+            </div>
             
             <div className="modal-header">
               <h2>{selectedProject.title}</h2>
@@ -2418,13 +2439,6 @@ function App() {
                     Live Demo
                   </a>
                 )}
-              </div>
-
-              {/* Bouton de retour pour mobile */}
-              <div className="modal-footer">
-                <button className="btn btn-back" onClick={() => { setSelectedProject(null); setCurrentMediaIndex(0); }}>
-                  ← Close
-                </button>
               </div>
             </div>
           </div>
