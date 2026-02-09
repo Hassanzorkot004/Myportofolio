@@ -2302,7 +2302,7 @@ export default function Portfolio() {
               <span className="text-green-400 block">& <span className="text-cyan-500">AI</span></span>
             </h1>
             <p className="text-xl text-green-400 mb-10 border-l-4 border-cyan-500 pl-6 max-w-2xl font-mono">
-              Hassan Zorkot. 2nd Year Computer Engineering Student.
+              2nd-year Computer Engineering student passionate about Data Science, Artificial Intelligence, and building smart applications.
             </p>
             <div className="flex flex-wrap gap-4">
               <button onClick={() => scroll('projets')} className="group px-8 py-4 bg-cyan-500/20 border-2 border-cyan-500 text-cyan-500 font-bold hover:bg-cyan-500 hover:text-black transition-all flex items-center gap-3 uppercase">
@@ -2319,9 +2319,37 @@ export default function Portfolio() {
           <h2 className="text-3xl md:text-5xl font-black mb-12"><span className="text-cyan-500">[</span> SKILLS <span className="text-cyan-500">]</span></h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
-              { t: "AI & ML", s: ["TensorFlow", "PyTorch", "scikit-learn", "OpenCV"], I: Cpu },
-              { t: "Web Dev", s: ["React", "Flask", "Streamlit", "Node.js"], I: Code2 },
-              { t: "Data Analytics", s: ["Power BI", "Python", "Pandas", "NumPy"], I: Activity },
+              {
+  t: "Artificial Intelligence, Machine Learning & NLP",
+  s: [
+    "Deep Learning (TensorFlow, PyTorch)",
+    "Natural Language Processing (NLP)",
+    "Computer Vision (OpenCV)",
+    "scikit-learn"
+  ],
+  I: Cpu
+},
+{
+  t: "Web Development & AI Applications",
+  s: [
+    "React",
+    "Flask",
+    "Streamlit",
+    "Node.js"
+  ],
+  I: Code2
+},
+{
+  t: "Data Analytics & Visualization",
+  s: [
+    "Power BI",
+    "Python",
+    "Pandas",
+    "NumPy"
+  ],
+  I: Activity
+}
+,
             ].map(({ t, s, I }) => (
               <div key={t} className="bg-black border-2 border-cyan-500/50 p-6 hover:border-cyan-500 hover:bg-cyan-500/5 transition-all">
                 <div className="flex items-center mb-4 gap-3">
